@@ -1,0 +1,14 @@
+<button (click)="messageService.add()">Add a message </button>
+ <!--output '$0.26'-->
+ <p>{{today | date: 'MM-yy:zzzz'}}</p>
+ <p>{{'good Evening' | capitalize}}</p>
+ <p>{{'angulAR is AMaZing!' | capitalize}}</p>
+
+ <input #searchRef (keyup)="0" type="search" placeholder="Search Tech" />
+ <p>{{['React', 'Angular', 'Redux', 'Ansible'] | search: searchRef.value}}</p>
+
+ <!--output 'CA$0.26'-->
+ 
+<ul>
+    <li *ngFor="let message of messageService.messages">{{message}}</li>
+</ul>

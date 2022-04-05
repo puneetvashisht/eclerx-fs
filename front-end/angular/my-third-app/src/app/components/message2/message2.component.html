@@ -1,0 +1,4 @@
+<button (click)="messageService.add()">Add a message </button>
+<ul>
+    <li *ngFor="let message of messageService.messages">{{message}}</li>
+</ul>

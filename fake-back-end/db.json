@@ -1,0 +1,92 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Ravi",
+      "salary": 33333.33
+    },
+    {
+      "name": "test",
+      "salary": 22222,
+      "id": 2
+    },
+    {
+      "name": "TestAGain",
+      "salary": 99999,
+      "id": 4
+    },
+    {
+      "name": "dsggsd",
+      "salary": "34343",
+      "id": 10
+    },
+    {
+      "name": "Priya",
+      "salary": 55555,
+      "id": 12
+    },
+    {
+      "name": "Harshit",
+      "salary": 16000,
+      "id": 13
+    },
+    {
+      "id": 14,
+      "name": "test4",
+      "salary": 343434
+    },
+    {
+      "id": 15,
+      "name": "dsggdsg",
+      "salary": 343
+    },
+    {
+      "id": 16,
+      "name": "sdggsg",
+      "salary": 32434
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "text": "buy milk",
+      "completed": true
+    },
+    {
+      "name": "test",
+      "salary": 22222,
+      "id": 2
+    },
+    {
+      "name": "test",
+      "salary": 22222,
+      "id": 3
+    },
+    {
+      "name": "test",
+      "salary": 22222,
+      "id": 4
+    }
+  ],
+  "auth": {
+    "auth": true,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ"
+  },
+  "products": [
+    {
+      "name": "iPad",
+      "price": 20000,
+      "id": 3
+    },
+    {
+      "name": "iPad",
+      "price": 20000,
+      "id": 4
+    },
+    {
+      "name": "iPad",
+      "price": 20000,
+      "id": 5
+    }
+  ]
+}
