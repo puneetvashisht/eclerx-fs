@@ -1,0 +1,22 @@
+<p>data-driven works!</p>
+
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div formGroupName="userData">
+        <input type="text" name="username" class="form-control" formControlName="username" />
+        <input type="email" name="email" class="form-control" formControlName="email" />
+        <div *ngIf="!myForm.get('userData.email')?.valid">Invalid Email</div>
+    </div>
+    
+    
+    <button type="submit" [disabled]="!myForm.valid">Submit</button>
+</form>
+
+<!-- <app-test [employees]="employee" (testEvent)="handler($)"></app-test> -->
+
+
+<!-- -- Data binding --
+{{}} - string interpolation
+[] - property binding : input
+() - event binding : output
+[()] - two-way binding -->

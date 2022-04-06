@@ -88,6 +88,20 @@ changed - by puneet
         - Style/Theme 
 
 
+    Coding Challenge
+
+    1. generate new cli project with routing
+    2. Add & View Employee components - Header with routerLink for navigation
+
+    3. Http communcation
+    4. Authentication service : {auth: true} --- basis hide the menu items
+
+
+    5. Navigate & Change Navigation Menu 
+    6. Private route
+
+
+
 
 
 

@@ -1,0 +1,16 @@
+<p>template-driven works!</p>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <input type="text" name="username" class="form-control" [(ngModel)]="user.username" required/>
+    <input type="email" name="email" class="form-control" [(ngModel)]="user.email" pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)"/>
+    <button type="submit" [disabled]="!f.valid">Submit</button>
+</form>
+
+<!-- <app-test [employees]="employee" (testEvent)="handler($)"></app-test> -->
+
+
+<!-- -- Data binding --
+{{}} - string interpolation
+[] - property binding : input
+() - event binding : output
+[()] - two-way binding -->
