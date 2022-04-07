@@ -1,13 +1,30 @@
 <p>data-driven works!</p>
 
 
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-    <div formGroupName="userData">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" >
+    <div class="form-group" formGroupName="name">
         <input type="text" name="username" class="form-control" formControlName="username" />
+        <div *ngIf="!myForm.get('userData.username')?.valid">This user already exists, choose a different username</div>
         <input type="email" name="email" class="form-control" formControlName="email" />
         <div *ngIf="!myForm.get('userData.email')?.valid">Invalid Email</div>
     </div>
     
+    <div class="form-group">
+        <input type="password" name="password" class="form-control" formControlName="password"/>
+        <div class="radio" *ngFor="let g of genders">
+            <label for="">
+                <input type="radio" [value]="g" formControlName="gender">
+                {{g}}
+            </label>
+        </div>
+    </div>
+
+    <div formArrayName="hobbies">
+        <h3>Hobbies</h3>
+        <div *ngFor="let hobby of hobbies.controls; let i = index">
+            <input type="checkbox" [formControlName]="i" > {{hobby.value}}
+        </div>
+    </div>
     
     <button type="submit" [disabled]="!myForm.valid">Submit</button>
 </form>

@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TemplateDrivenComponent } from './components/template-driven/template-driven.component';
 import { DataDrivenComponent } from './components/data-driven/data-driven.component';
+import { ReactiveComponent } from './components/reactive/reactive.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemplateDrivenComponent,
-    DataDrivenComponent
+    DataDrivenComponent,
+    ReactiveComponent
   ],
   imports: [
     BrowserModule,

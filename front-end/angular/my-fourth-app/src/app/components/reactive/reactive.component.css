@@ -1,0 +1,7 @@
+.has-success .form-control {
+    border-color: chartreuse;
+}
+
+.has-danger .form-control {
+    border-color: red;
+}

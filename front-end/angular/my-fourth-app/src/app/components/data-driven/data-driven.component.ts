@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { ControlContainer, FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-data-driven',
@@ -8,14 +8,22 @@ import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } fro
 })
 export class DataDrivenComponent implements OnInit {
   myForm: FormGroup;
+  genders: Array<string> = ['male', 'female']
 
   constructor(private formBuilder: FormBuilder) { 
     this.myForm =  this.formBuilder.group({
       'userData': this.formBuilder.group({
-        'username': ['', [Validators.required, this.sampleValidator]],
+        'username': ['', [Validators.required, this.sampleValidator], this.asyncSampleValidator],
         'email': ['', [Validators.email]]
-      })    
+      }),
+      'password': ['', [Validators.required,Validators.minLength(6)]],
+      'gender': ['male'],
+      'hobbies': formBuilder.array(['Cricket', 'Swimming'])    
     })
+  }
+
+  get hobbies(){
+    return this.myForm.get('hobbies') as FormArray
   }
 
   sampleValidator(control: FormControl): ValidationErrors | null{
@@ -23,6 +31,19 @@ export class DataDrivenComponent implements OnInit {
       return {invalidText: true}
     }
     return null;
+  }
+  asyncSampleValidator(control: FormControl): Promise<any>{
+    return new Promise<any>((resolve, reject)=>{
+      setTimeout(()=>{
+        if(control.value === 'admin'){
+          resolve({invalidText: true}) 
+        }
+        else{
+          resolve(null);
+        }
+      }, 5000)
+    })
+
   }
 
   ngOnInit(): void {
