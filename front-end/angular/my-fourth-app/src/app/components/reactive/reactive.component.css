@@ -8,3 +8,8 @@
 .has-danger .form-control-feedback {
     color: red;
 }
+
+.example-form-field {
+    width: 200px;
+  }
+  

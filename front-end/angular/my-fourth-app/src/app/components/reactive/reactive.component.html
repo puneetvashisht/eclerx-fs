@@ -3,17 +3,29 @@
 
 
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+   
+
     <div  formGroupName="name">
         <div class="form-group" [ngClass]="{'has-danger': firstname?.invalid && (firstname?.dirty || firstname?.touched), 'has-success': firstname?.valid && (firstname?.dirty || firstname?.touched)}">
-            <input type="text" name="username" class="form-control" formControlName="firstName"  placeholder="Enter First Name"/>
+            <p highlight>Just simple para</p>
+            <mat-slider min="1" max="100" step="1" value="50"></mat-slider>
+            <h2 highlight>Just simple heading </h2>
+            <input type="text" matInput name="username" class="form-control" formControlName="firstName"  placeholder="Enter First Name"/>
             <div class="form-control-feedback" *ngIf="firstname?.invalid && firstname?.touched">
                 <p *ngIf="firstname?.errors?.['required']">* First name is required!</p>
                 <p *ngIf="firstname?.errors?.['invalidText']">* Invalid text!</p>
                 <p>{{firstname?.errors | json}}</p>
             </div>
         </div>
+
+         <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Last name*</mat-label>
+        <input matInput type="text" formControlName="lastName" placeholder="Enter Last Name"/>
+      
+      </mat-form-field>
         
-        <input type="email" name="email" class="form-control" formControlName="lastName"  placeholder="Enter Last Name"/>
+        <!-- <input type="email" name="email" class="form-control" formControlName="lastName"  placeholder="Enter Last Name"/> -->
         <div *ngIf="lastname?.invalid && lastname?.touched">* Last name is required!</div>
     </div>
     
