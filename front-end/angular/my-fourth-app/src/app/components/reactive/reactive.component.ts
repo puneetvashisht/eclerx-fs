@@ -20,7 +20,7 @@ export class ReactiveComponent implements OnInit {
         'lastName': ['', [Validators.required]]
       }),
       'password': ['', [Validators.required,Validators.minLength(6)]],
-      'email': ['', [Validators.required,Validators.minLength(6)]],
+      'email': ['', [Validators.required, Validators.email, Validators.minLength(6)]],
       'language': ['frech']  
     })
   }

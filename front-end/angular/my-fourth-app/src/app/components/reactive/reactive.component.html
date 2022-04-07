@@ -6,9 +6,10 @@
     <div  formGroupName="name">
         <div class="form-group" [ngClass]="{'has-danger': firstname?.invalid && (firstname?.dirty || firstname?.touched), 'has-success': firstname?.valid && (firstname?.dirty || firstname?.touched)}">
             <input type="text" name="username" class="form-control" formControlName="firstName"  placeholder="Enter First Name"/>
-            <div *ngIf="firstname?.invalid && firstname?.touched">
+            <div class="form-control-feedback" *ngIf="firstname?.invalid && firstname?.touched">
                 <p *ngIf="firstname?.errors?.['required']">* First name is required!</p>
-                
+                <p *ngIf="firstname?.errors?.['invalidText']">* Invalid text!</p>
+                <p>{{firstname?.errors | json}}</p>
             </div>
         </div>
         
@@ -23,7 +24,10 @@
     </div>
 
    
-    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    <button type="submit" >Submit</button>
+    <!-- <button type="submit" [disabled]="!profileForm.valid">Submit</button> -->
+
+    {{profileForm.value  | json}}
 </form>
 
 <!-- <app-test [employees]="employee" (testEvent)="handler($)"></app-test> -->

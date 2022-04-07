@@ -5,3 +5,6 @@
 .has-danger .form-control {
     border-color: red;
 }
+.has-danger .form-control-feedback {
+    color: red;
+}
