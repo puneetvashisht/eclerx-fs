@@ -1,0 +1,48 @@
+
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+    
+    <div class="form-group" [ngClass]="{'has-danger': email?.invalid && (email?.dirty || email?.touched), 'has-success': email?.valid && (email?.dirty || email?.touched)}">
+        <input type="email" name="email" class="form-control" formControlName="email" placeholder="Enter Email"/>
+    </div>
+    <div class="form-group" [ngClass]="{'has-danger': password?.invalid && (password?.dirty || password?.touched), 'has-success': password?.valid && (password?.dirty || password?.touched)}">
+        <input type="password" name="password" class="form-control" formControlName="password" placeholder="Enter password/">
+    </div>
+
+    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+
+    {{loginForm.value  | json}}
+</form> -->
+
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+             placeholder="Ex. pat@example.com">
+      <mat-hint>Errors appear instantly!</mat-hint>
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput [formControl]="password" [errorStateMatcher]="matcher"
+               placeholder="secret password">
+        <mat-hint>Errors appear instantly!</mat-hint>
+        <mat-error *ngIf="!password.hasError('required')">
+          Please enter a valid password
+        </mat-error>
+        <mat-error *ngIf="password.hasError('minLength')">
+          Password should be minimum <strong>6 characters</strong>
+        </mat-error>
+      </mat-form-field>
+
+    <button (click)="login()" >Login</button>
+
+  </form>
+
+

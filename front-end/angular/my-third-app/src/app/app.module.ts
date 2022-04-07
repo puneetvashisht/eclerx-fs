@@ -12,9 +12,14 @@ import {HttpClientModule} from '@angular/common/http';
 // import { AppRoutingModule } from './app-routing.module';
 import { Routes, RouterModule } from '@angular/router';
 import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from './material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
-  { path: '', component: ViewEmployeesComponent },
+  { path: '', component: LoginComponent },
+  { path: 'view', component: ViewEmployeesComponent },
   { path: 'add', component: AddEmployeeComponent },
   { path: 'update/:id', component: UpdateEmployeeComponent },
 ]
@@ -28,10 +33,11 @@ const routes: Routes = [
     CapitalizePipe,
     SearchPipe,
     AddEmployeeComponent,
-    ViewEmployeesComponent
+    ViewEmployeesComponent,
+    LoginComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule, RouterModule.forRoot(routes)
+    BrowserModule, HttpClientModule, RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule, MaterialModule, BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
