@@ -22,7 +22,9 @@ export class LoginService {
     return this.http.post('http://localhost:5000/auth/login', user)
     .subscribe((data: any) => {
       this.authenticated = data.auth;
-      this.router.navigate(['view'])
+      if(data.auth){
+        this.router.navigate(['view'])
+      }
     })
   }
 }
