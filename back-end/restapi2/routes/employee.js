@@ -5,14 +5,15 @@ const Employee = require('../models/employee')
 
 
 // protected route on back-end
-router.get('/', isAuthenticatedUser ,async (req, res) => {
+router.get('/' ,async (req, res) => {
     // db and fetch all courses
 
     let employees = await Employee.find();
     res.json(employees);
 })
     
-router.post('/', [isAuthenticatedUser, authorizeRoles('admin')], async (req, res) => {
+// router.post('/', [isAuthenticatedUser, authorizeRoles('admin')], async (req, res) => {
+router.post('/', async (req, res) => {
     // db and insert one course    
     let employee = await Employee.create(req.body);
     res.status(201).json(employee);

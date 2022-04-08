@@ -1,0 +1,25 @@
+<!-- <p>{{employees | json}}</p> -->
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Search By Name</span>
+  <input type="text" #name (keyup)="0" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees | search: name.value; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td> <a routerLink="{{'/update/' + employee._id}}" routerLinkActive="active" class="nav-link">{{employee.name}}</a></td>
+        <td>{{employee.salary}}</td>
+        <td><button (click)="deleteEmployee(employee._id)" class="btn btn-danger"> X </button></td>
+      </tr>
+     
+    </tbody>
+  </table>
