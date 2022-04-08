@@ -16,6 +16,20 @@ exports.login = asyncHandler( async (req, res) => {
     res.status(200).json({auth: true, token: token});
 } )
 
+
+exports.findExistingUser = asyncHandler( async (req, res) => {
+
+    const user = await User.findOne({email: req.params.email})
+    // const token = user.getSignedJwtToken();
+    if(user){
+        res.status(200).json({existing: true});
+    }
+    else{
+        res.status(200).json({existing: false});
+    }
+    
+} )
+
 exports.getUsers = asyncHandler( async(req, res) => {
     const users = await User.find();
     console.log(users);

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user')
-const {signup, login, getUsers, getUser} = require('../controllers/user')
+const {signup, login, getUsers, getUser,findExistingUser} = require('../controllers/user')
 
 const {authenticateUser, isAuthenticatedUser} = require('../middlewares/auth')
 // Missing Pieces
@@ -23,6 +23,7 @@ router.post('/login', authenticateUser, login)
 router.get('/users', getUsers)
 
 router.get('/users/:id', getUser)
+router.get('/existing/:email', findExistingUser)
 
 
 

@@ -9,16 +9,18 @@ import { SearchPipe } from './pipes/search.pipe';
 import {MaterialModule} from './material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { AuthGuard } from './addons/auth.guard';
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'view', component: ViewEmployeesComponent, canActivate: [AuthGuard] },
   { path: 'add', component: AddEmployeeComponent, canActivate: [AuthGuard] },
   { path: 'update/:id', component: UpdateEmployeeComponent, canActivate: [AuthGuard] },
 ]
 
 @NgModule({
-  declarations: [ViewEmployeesComponent, AddEmployeeComponent, UpdateEmployeeComponent,  SearchPipe, LoginComponent],
+  declarations: [ViewEmployeesComponent, AddEmployeeComponent, UpdateEmployeeComponent,  SearchPipe, LoginComponent, SignupComponent],
   imports: [BrowserModule,MaterialModule ,RouterModule.forRoot(routes), FormsModule, ReactiveFormsModule],
   exports: [RouterModule],
   providers: [AuthGuard]

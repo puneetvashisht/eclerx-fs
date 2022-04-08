@@ -43,6 +43,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
+// import { SignupComponent } from './components/signup/signup.component';
 
 @NgModule({
   exports: [
@@ -92,5 +93,6 @@ import {OverlayModule} from '@angular/cdk/overlay';
     PortalModule,
     ScrollingModule,
   ]
+
 })
 export class MaterialModule {}

@@ -27,4 +27,11 @@ export class LoginService {
       }
     })
   }
+
+
+  findExistingUser(email : string){
+    // 
+    return this.http.get('http://localhost:5000/auth/existing/'+ email ).toPromise();
+    
+  }
 }
