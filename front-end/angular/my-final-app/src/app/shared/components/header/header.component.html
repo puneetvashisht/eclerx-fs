@@ -7,8 +7,8 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <!-- <a routerLink="/" routerLinkActive="active" class="nav-link">Login</a> -->
-          <a routerLink="/view" routerLinkActive="active" class="nav-link">View Employees</a>
-          <a routerLink="/add" routerLinkActive="active" class="nav-link">Add Employee</a>
+          <a *ngIf="isAuthenticated" routerLink="/view" routerLinkActive="active" class="nav-link">View Employees</a>
+          <a *ngIf="isAuthenticated" routerLink="/add" routerLinkActive="active" class="nav-link">Add Employee</a>
           <a class="nav-link disabled">Disabled</a>
         </div>
       </div>
