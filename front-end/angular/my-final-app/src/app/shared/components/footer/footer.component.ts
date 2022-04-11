@@ -1,14 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoginService } from 'src/app/employees/services/login.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class FooterComponent implements OnInit {
 
+ 
   isAuthenticated: boolean =  false;
   private authListenerSubs? : Subscription
 
@@ -23,13 +24,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.isAuthenticated = authenticated;
     })
   }
-
-  logout(){
-    this.loginService.logout();
-  }
-
-  // ngDoCheck(): void {
-  //   this.isAuthenticated =  this.loginService.getAuth();
-  // }
 
 }

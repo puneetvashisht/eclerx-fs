@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../services/employee.service';
+import { LoginService } from '../../services/login.service';
 // import { Employee } from '../../employee';
 // import { FakedataService } from 'src/app/services/fakedata.service';
 
@@ -15,6 +17,7 @@ export class ViewEmployeesComponent implements OnInit {
   constructor(private employeeService : EmployeeService) { }
 
 
+
   employees: Array<Employee> = []
 
   deleteEmployee(id: string){
@@ -26,6 +29,7 @@ export class ViewEmployeesComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('Initialized once ..')
+   
     // this.employees = this.fakeApi.fetchEmployees();
     // this.http.get('http://localhost:8000/employees')
     this.employeeService.fetchEmployees()
@@ -33,8 +37,12 @@ export class ViewEmployeesComponent implements OnInit {
       this.employees = data
     })
 
+   
+
     // http.get
     // extract data and put into employees array
   }
+
+
 
 }

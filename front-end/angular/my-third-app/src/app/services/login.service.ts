@@ -11,6 +11,6 @@ export class LoginService {
 
   authenticate(user : User){
     // 
-    return this.http.post('http://locahost:5000/auth/login', user);
+    return this.http.post('http://localhost:5000/auth/login', user);
   }
 }
