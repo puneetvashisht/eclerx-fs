@@ -9,10 +9,13 @@ import { DataDrivenComponent } from './components/data-driven/data-driven.compon
 import { ReactiveComponent } from './components/reactive/reactive.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http'
 
 // material imports
 import { MatSliderModule } from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
+import { ViewEmployeesComponent } from './components/view-employees/view-employees.component';
+import { ListEmployeesComponent } from './components/list-employees/list-employees.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import {MatInputModule} from '@angular/material/input';
     TemplateDrivenComponent,
     DataDrivenComponent,
     ReactiveComponent,
-    HighlightDirective
+    HighlightDirective,
+    ViewEmployeesComponent,
+    ListEmployeesComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,8 @@ import {MatInputModule} from '@angular/material/input';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

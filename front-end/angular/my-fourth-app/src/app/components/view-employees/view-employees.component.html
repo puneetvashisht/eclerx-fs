@@ -1,0 +1,8 @@
+<p>view-employees works!</p>
+<button (click)="loadData()"> Load employee data</button>
+<table border="1px">
+    <tr *ngFor="let employee of employees">
+        <td>{{employee.name}}</td>
+        <td>{{employee.salary}}</td>
+    </tr>
+</table>
