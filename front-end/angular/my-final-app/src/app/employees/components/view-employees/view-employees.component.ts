@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Employee } from '../../models/employee';
 import { EmployeeService } from '../../services/employee.service';
-import { LoginService } from '../../services/login.service';
+
 // import { Employee } from '../../employee';
 // import { FakedataService } from 'src/app/services/fakedata.service';
 

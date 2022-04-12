@@ -7,7 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <!-- <a routerLink="/" routerLinkActive="active" class="nav-link">Login</a> -->
-          <a *ngIf="!isAuthenticated" routerLink="/signup" routerLinkActive="active" class="nav-link">Sign Up</a>
+          <a *ngIf="!isAuthenticated" routerLink="/auth/signup" routerLinkActive="active" class="nav-link">Sign Up</a>
           <a *ngIf="isAuthenticated" routerLink="/employee/view" routerLinkActive="active" class="nav-link">View</a>
           <a *ngIf="isAuthenticated" routerLink="/employee/add" routerLinkActive="active" class="nav-link">Add</a>
           <a *ngIf="isAuthenticated" (click)="logout()" routerLinkActive="active" class="nav-link">Logout</a>

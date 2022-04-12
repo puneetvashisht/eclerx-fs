@@ -24,7 +24,7 @@ export class AddEmployeeComponent implements OnInit {
     .subscribe(data=> {
       console.log(data);
       //programmatic navigation..
-      this.router.navigate(['view']);
+      this.router.navigate(['employee/view']);
 
     });
 
