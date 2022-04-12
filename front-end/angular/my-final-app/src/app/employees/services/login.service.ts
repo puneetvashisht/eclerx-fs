@@ -38,7 +38,7 @@ export class LoginService {
       this.authenticated = data.auth;
       this.authStatusListener.next(data.auth)
       if(data.auth){
-        this.router.navigate(['view'])
+        this.router.navigate(['employee/view'])
       }
     })
   }
