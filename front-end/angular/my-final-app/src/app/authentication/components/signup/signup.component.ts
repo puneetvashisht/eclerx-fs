@@ -59,7 +59,8 @@ export class SignupComponent implements OnInit {
 
     let obj = { email: this.emailFormControl.value, password: this.password.value }
     console.log(obj)
-    return this.loginService.findExistingUser(this.emailFormControl.value)
+    this.loginService.signup(obj)
+    .subscribe(data=> console.log(data))
       // .then((data:any)=> console.log(data))
 
     }

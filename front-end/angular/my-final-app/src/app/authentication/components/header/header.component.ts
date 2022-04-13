@@ -11,7 +11,9 @@ import { LoginService } from '../../services/login.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   isAuthenticated: boolean =  false;
+  isAdmin: boolean =  false;
   private authListenerSubs? : Subscription
+  private adminListenerSubs? : Subscription
 
   constructor(private loginService : LoginService) { }
   ngOnDestroy(): void {
@@ -22,6 +24,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
    this.authListenerSubs = this.loginService.getAuthStatusListener()
     .subscribe((authenticated)=> {
       this.isAuthenticated = authenticated;
+    })
+
+    this.adminListenerSubs = this.loginService.getAdminStatusListener()
+    .subscribe((admin)=> {
+      this.isAdmin = admin;
     })
   }
 
