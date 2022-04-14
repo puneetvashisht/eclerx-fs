@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/models/appState';
-import { Delete } from 'src/app/todos/todo.action';
+import { Delete, Done } from 'src/app/todos/todo.action';
 
 @Component({
   selector: 'app-todo-list',
@@ -20,6 +20,10 @@ export class TodoListComponent implements OnInit {
   delete(id: number){
     console.log('deleting todo with id ', id);
     this.store.dispatch(new Delete(id))
+  }
+
+  done(id:number){
+    this.store.dispatch(new Done(id))
   }
 
 }
