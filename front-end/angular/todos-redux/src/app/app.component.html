@@ -1,0 +1,10 @@
+<h3>Add Todo</h3>
+
+<input type="text" [(ngModel)]="todo" placeholder="Enter todo"/>
+
+<button (click)="add()">Add</button>
+
+
+
+<!-- <p>{{todosItem$ | async | json}}</p> -->
+<app-todo-list [todos]="todosItem$ | async "></app-todo-list>

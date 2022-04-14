@@ -1,0 +1,4 @@
+<h2>View Todos</h2>
+<ul>
+    <li *ngFor="let todo of todos.todos"><p>{{todo.content}} <span><button (click)="delete(todo.id)"> X </button></span></p></li>
+</ul>

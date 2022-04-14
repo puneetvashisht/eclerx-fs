@@ -88,6 +88,6 @@ export class LoginService {
   }
 
   signup(user: User){
-    return this.http.post('http://localhost:5000/auth/signup', user)
+    return this.http.post('http://localhost:5000/auth/signup', user);
   }
 }
